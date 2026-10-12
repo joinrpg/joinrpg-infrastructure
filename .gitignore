@@ -35,6 +35,9 @@ override.tf.json
 # Файлы с доступами к облаку (шаблон — secrets.env.example)
 secrets*.env
 
+# Служебные документы, в репозиторий не попадают
+docs/
+
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
