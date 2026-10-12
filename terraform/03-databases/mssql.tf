@@ -44,8 +44,10 @@ resource "openstack_blockstorage_volume_v3" "mssql_boot" {
 
   # Образ нужен только при создании диска. Selectel обновляет образы, и их ID меняется,
   # а смена образа пересоздаёт диск.
+  # prevent_destroy: на диске лежат данные MS SQL, Terraform откажется выполнять план с его удалением.
   lifecycle {
-    ignore_changes = [image_id]
+    ignore_changes  = [image_id]
+    prevent_destroy = true
   }
 }
 
@@ -69,9 +71,11 @@ resource "openstack_compute_instance_v2" "mssql" {
 
   # ВМ создана в панели и импортирована. Загрузочный диск и порт при импорте попадают в состояние
   # не так, как описаны здесь, а в метаданные Selectel пишет служебные значения —
-  # без этого блока Terraform пересоздаёт ВМ.
+  # без ignore_changes Terraform пересоздаёт ВМ.
+  # prevent_destroy: Terraform откажется выполнять план, в котором ВМ удаляется или пересоздаётся.
   lifecycle {
-    ignore_changes = [block_device, network, metadata, image_id, image_name]
+    ignore_changes  = [block_device, network, metadata, image_id, image_name]
+    prevent_destroy = true
   }
 }
 

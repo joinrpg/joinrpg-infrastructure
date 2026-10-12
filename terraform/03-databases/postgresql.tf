@@ -33,9 +33,11 @@ resource "selectel_dbaas_postgresql_datastore_v1" "postgresql" {
 
   # Кластер создан в панели и импортирован: публичный адрес и пулер при импорте в состояние
   # не попадают, и без этого блока Terraform пытается настроить их заново на работающей БД.
-  # Чтобы менять их через код, блок нужно убрать.
+  # Чтобы менять их через код, ignore_changes нужно убрать.
+  # prevent_destroy: Terraform откажется выполнять план, в котором кластер удаляется или пересоздаётся.
   lifecycle {
-    ignore_changes = [floating_ips, pooler]
+    ignore_changes  = [floating_ips, pooler]
+    prevent_destroy = true
   }
 }
 
@@ -63,4 +65,9 @@ resource "selectel_dbaas_postgresql_database_v1" "databases" {
   datastore_id = selectel_dbaas_postgresql_datastore_v1.postgresql.id
   owner_id     = selectel_dbaas_user_v1.users[each.value].id
   name         = each.key
+
+  # Удаление базы через код запрещено: чтобы удалить базу, блок нужно убрать отдельной правкой
+  lifecycle {
+    prevent_destroy = true
+  }
 }
