@@ -1,6 +1,10 @@
 # Записи зоны joinrpg.ru. Ключ — <имя>/<тип>.
 locals {
   joinrpg_ru = {
+    "joinrpg.ru./A" = {
+      ttl     = 3600
+      records = ["176.53.231.74"]
+    }
     "joinrpg.ru./DNAME" = {
       ttl     = 3600
       records = ["joinrpg.ru.website.yandexcloud.net."]
@@ -130,7 +134,7 @@ locals {
     }
     "id.joinrpg.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "krs._domainkey.joinrpg.ru./AAAA" = {
       ttl     = 3600

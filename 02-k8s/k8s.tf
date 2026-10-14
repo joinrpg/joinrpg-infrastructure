@@ -13,8 +13,8 @@ resource "selectel_mks_cluster_v1" "k8s" {
 
   cni_type = "CALICO"
 
-  enable_autorepair                 = true
-  enable_patch_version_auto_upgrade = true
+  enable_autorepair                 = false
+  enable_patch_version_auto_upgrade = false
   maintenance_window_start          = local.maintenance_window_start
 }
 

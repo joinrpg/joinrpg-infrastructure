@@ -3,7 +3,7 @@ locals {
   tsarevs_ru = {
     "tsarevs.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "_acme-challenge.honor-avatars.tsarevs.ru./TXT" = {
       ttl     = 600
@@ -26,9 +26,13 @@ locals {
       comment = "внешний доступ в БД MSSQL (закрыт SG)"
       records = ["136.234.75.157"]
     }
+    "kogda-igra.tsarevs.ru./A" = {
+      ttl     = 3600
+      records = ["176.53.231.74"]
+    }
     "larp-dictionary.tsarevs.ru./A" = {
       ttl     = 600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "psql.tsarevs.ru./A" = {
       ttl     = 600
@@ -36,7 +40,7 @@ locals {
     }
     "twilight.tsarevs.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "wheel.tsarevs.ru./DNAME" = {
       ttl     = 3600

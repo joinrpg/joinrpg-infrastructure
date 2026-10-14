@@ -4,7 +4,7 @@ locals {
     "kogda-igra.ru./A" = {
       ttl     = 3600
       comment = "временный редирект"
-      records = ["37.46.128.30"]
+      records = ["176.53.231.74"]
     }
     "kogda-igra.ru./MX" = {
       ttl     = 600
@@ -27,7 +27,7 @@ locals {
     }
     "dev.kogda-igra.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "dev.kogda-igra.ru./MX" = {
       ttl = 600
@@ -58,7 +58,7 @@ locals {
     }
     "prod.kogda-igra.ru./A" = {
       ttl     = 43200
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "s1._domainkey.kogda-igra.ru./TXT" = {
       ttl     = 600
@@ -66,7 +66,7 @@ locals {
     }
     "www.kogda-igra.ru./A" = {
       ttl     = 43200
-      records = ["37.46.128.30"]
+      records = ["176.53.231.74"]
     }
   }
 }
