@@ -1,0 +1,11 @@
+# Провайдеры ставятся с зеркала Selectel: registry.terraform.io из России недоступен.
+# Подключается переменной окружения TF_CLI_CONFIG_FILE (см. secrets.env.example).
+provider_installation {
+  network_mirror {
+    url     = "https://tf-proxy.selectel.ru/mirror/v1/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
