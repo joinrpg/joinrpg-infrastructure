@@ -95,7 +95,7 @@ locals {
     }
     "components.joinrpg.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "coroot.joinrpg.ru./A" = {
       ttl     = 3600
@@ -103,11 +103,11 @@ locals {
     }
     "dev-components.joinrpg.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "dev.joinrpg.ru./A" = {
       ttl     = 43200
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "dev.joinrpg.ru./MX" = {
       ttl     = 3600
@@ -122,7 +122,7 @@ locals {
     }
     "devid.joinrpg.ru./A" = {
       ttl     = 3600
-      records = ["51.250.99.233"]
+      records = ["176.53.231.74"]
     }
     "docs.dev.joinrpg.ru./CNAME" = {
       ttl     = 3600
