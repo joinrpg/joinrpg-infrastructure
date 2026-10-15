@@ -21,6 +21,16 @@ locals {
       ttl     = 600
       records = ["honor-avatars.tsarevs.ru.website.yandexcloud.net."]
     }
+    "id.joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "IdPortal напрямую, без заглушки (DRP)"
+      records = ["176.53.231.74"]
+    }
+    "joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "Portal напрямую, без заглушки (DRP)"
+      records = ["176.53.231.74"]
+    }
     "joindb.tsarevs.ru./A" = {
       ttl     = 3600
       comment = "внешний доступ в БД MSSQL (закрыт SG)"
