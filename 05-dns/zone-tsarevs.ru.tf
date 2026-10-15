@@ -23,8 +23,8 @@ locals {
     }
     "joindb.tsarevs.ru./A" = {
       ttl     = 3600
-      comment = "внешний доступ в БД MSSQL (закрыт SG)"
-      records = ["136.234.75.157"]
+      comment = "доступ к БД через балансировщик кластера: 1433 MSSQL, 5433 PostgreSQL, 2222 SSH ВМ MSSQL (закрыт allowed_cidrs)"
+      records = ["176.53.231.74"]
     }
     "kogda-igra.tsarevs.ru./A" = {
       ttl     = 3600
