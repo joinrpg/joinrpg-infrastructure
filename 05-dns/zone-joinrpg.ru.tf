@@ -81,15 +81,15 @@ locals {
       ttl     = 3600
       records = ["51.250.99.233"]
     }
-    "avatars.dev.joinrpg.ru./CNAME" = {
+    "avatars.dev.joinrpg.ru./A" = {
       ttl     = 3600
       comment = "бакет joinrpg-dev-avatars"
-      records = ["access.ru-6.storage.selcloud.ru."]
+      records = ["176.53.231.74"]
     }
-    "avatars.joinrpg.ru./CNAME" = {
+    "avatars.joinrpg.ru./A" = {
       ttl     = 3600
       comment = "бакет joinrpg-prod-avatars"
-      records = ["access.ru-6.storage.selcloud.ru."]
+      records = ["176.53.231.74"]
     }
     "awverify.dev.joinrpg.ru./CNAME" = {
       ttl     = 3600
