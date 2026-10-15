@@ -13,6 +13,16 @@ locals {
       ttl     = 600
       records = ["fpqvktuce0opgbi4ic9j.cm.yandexcloud.net."]
     }
+    "dev.id.joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "IdPortal dev напрямую (DRP)"
+      records = ["176.53.231.74"]
+    }
+    "dev.joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "Portal dev напрямую (DRP)"
+      records = ["176.53.231.74"]
+    }
     "factorio.tsarevs.ru./A" = {
       ttl     = 600
       records = ["176.109.107.41"]
@@ -20,6 +30,16 @@ locals {
     "honor-avatars.tsarevs.ru./DNAME" = {
       ttl     = 600
       records = ["honor-avatars.tsarevs.ru.website.yandexcloud.net."]
+    }
+    "id.joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "IdPortal напрямую, без заглушки (DRP)"
+      records = ["176.53.231.74"]
+    }
+    "joinrpg.tsarevs.ru./A" = {
+      ttl     = 600
+      comment = "Portal напрямую, без заглушки (DRP)"
+      records = ["176.53.231.74"]
     }
     "joindb.tsarevs.ru./A" = {
       ttl     = 3600
