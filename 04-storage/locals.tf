@@ -6,6 +6,20 @@ locals {
   auth_url    = "https://cloud.api.selcloud.ru/identity/v3/"
   s3_endpoint = "https://s3.ru-6.storage.selcloud.ru"
 
+  # Сервисные пользователи приложений с ролью s3.user: имя => ID. Создаются в панели, Terraform ими
+  # не управляет. ID — в панели: IAM → Сервисные пользователи → пользователь, под именем
+  # TODO: вписать ID до apply
+  s3_service_users = {
+    "joinrpg-dev-s3-user" = ""
+    "joinrpg-prod-s3"     = ""
+  }
+
+  # Бакеты аватарок: бакет => сервисный пользователь приложения, который в него загружает
+  avatar_buckets = {
+    "joinrpg-dev-avatars"  = "joinrpg-dev-s3-user"
+    "joinrpg-prod-avatars" = "joinrpg-prod-s3"
+  }
+
   # Бакет joinrpg-tfstate описан в слое 00-tfstate-bucket.
   # Тип бакета (публичный или приватный), класс хранения, индексная страница и привязанные домены
   # через S3 API не настраиваются — они заданы в панели Selectel и здесь не описаны.
