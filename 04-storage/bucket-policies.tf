@@ -40,11 +40,4 @@ resource "aws_s3_bucket_policy" "avatars" {
       },
     ]
   })
-
-  lifecycle {
-    precondition {
-      condition     = local.s3_service_users[each.value] != ""
-      error_message = "Не задан ID сервисного пользователя ${each.value} в local.s3_service_users."
-    }
-  }
 }
