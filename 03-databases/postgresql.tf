@@ -41,19 +41,13 @@ resource "selectel_dbaas_postgresql_datastore_v1" "postgresql" {
   }
 }
 
-resource "selectel_dbaas_user_v1" "users" {
-  for_each = local.postgresql_users
+# Пользователи создаются в панели, их ID — в local.postgresql_users. Раньше Terraform вёл их сам:
+# блок убирает их из состояния, не удаляя в облаке.
+removed {
+  from = selectel_dbaas_user_v1.users
 
-  project_id   = local.project_id
-  region       = local.region
-  datastore_id = selectel_dbaas_postgresql_datastore_v1.postgresql.id
-  name         = each.key
-  password     = var.db_user_passwords[each.key]
-
-  # Пароль используется только при создании пользователя. У существующих пользователей
-  # Terraform пароль не меняет: смена делается в панели.
   lifecycle {
-    ignore_changes = [password]
+    destroy = false
   }
 }
 
@@ -63,8 +57,10 @@ resource "selectel_dbaas_postgresql_database_v1" "databases" {
   project_id   = local.project_id
   region       = local.region
   datastore_id = selectel_dbaas_postgresql_datastore_v1.postgresql.id
-  owner_id     = selectel_dbaas_user_v1.users[each.value].id
+  owner_id     = local.postgresql_users[each.value]
   name         = each.key
+  lc_collate   = local.postgresql_locale
+  lc_ctype     = local.postgresql_locale
 
   # Удаление базы через код запрещено: чтобы удалить базу, блок нужно убрать отдельной правкой
   lifecycle {
