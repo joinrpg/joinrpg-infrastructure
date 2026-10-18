@@ -41,10 +41,6 @@ locals {
       ttl     = 600
       records = ["\"LZOEPVeGoI7Qj-CoCKeO045uiGQqamPzGUTo5BNsbfY\""]
     }
-    "_acme-challenge.docs.dev.joinrpg.ru./CNAME" = {
-      ttl     = 600
-      records = ["fpqg190l0ipgum1pbbdu.cm.yandexcloud.net."]
-    }
     "_acme-challenge.docs.joinrpg.ru./CNAME" = {
       ttl     = 600
       records = ["fpqtkfbfqmlomfb27uc9.cm.yandexcloud.net."]
@@ -136,7 +132,7 @@ locals {
     }
     "docs.dev.joinrpg.ru./CNAME" = {
       ttl     = 3600
-      records = ["4b5fc09b-6e5a-4c57-87a8-2c1e5c12f496.selstorage.ru."]
+      records = ["access.ru-6.storage.selcloud.ru."]
     }
     "docs.joinrpg.ru./CNAME" = {
       ttl     = 3600
