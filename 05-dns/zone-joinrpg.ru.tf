@@ -19,10 +19,8 @@ locals {
         "\"google-site-verification=CiWwdhpkYAJn6Ojszw0dnBDyc5cf42Sxt7NoAlRz42I\"",
         "\"mailru-verification: 0e6dbab10c3de090\"",
         "\"mailru-verification: a2a8c50db5797e9e\"",
-        "\"v=spf1 include:_spf.yandexcloud.net ~all\"",
-        "\"v=spf1 redirect=_spf.yandex.net\"",
+        "\"v=spf1 include:_spf.yandexcloud.net include:_spf.yandex.net ~all\"",
         "\"yandex-verification: 3a9531db90083dfb\"",
-        "\"yandex-verification: 3a9531db90083dfbyandex-verification: 3a9531db90083dfb\"",
       ]
     }
     "*.k8s.joinrpg.ru./A" = {
@@ -174,6 +172,10 @@ locals {
     "smtp._domainkey.dev.joinrpg.ru./TXT" = {
       ttl     = 3600
       records = ["\"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIf2JaNBM1atJuPcZTtzy48z9fz1l+mP+ibsPEn9536JcLm+Ron7DbiPuK6u6cy6GprKDVeBfcYdTRL+RrY0s6tX4ZRxpW7aefYoAvl5muzrD5N3Ls7JPqpZzwIyzpEcyQLHadIJMo6AuMcbyfxBEm8Z7Q0OcnBju8aegErUXjywIDAQAB\""]
+    }
+    "www.joinrpg.ru./A" = {
+      ttl     = 3600
+      records = ["176.53.231.74"]
     }
   }
 }
